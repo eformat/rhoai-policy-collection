@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/eformat/rhoai-policy-collection.git
     path: gitops/applications/policy-collection/overlays/sno
-    targetRevision: main
+    targetRevision: etx-ai
     plugin:
       name: argocd-vault-plugin-kustomize
   syncPolicy:

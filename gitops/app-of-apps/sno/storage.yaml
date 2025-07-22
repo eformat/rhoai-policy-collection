@@ -30,7 +30,7 @@ spec:
         path: gitops/applications/storage/overlay/sno
         plugin:
           name: argocd-novault-plugin-kustomize
-        targetRevision: main
+        targetRevision: etx-ai
       syncPolicy:
         automated:
           prune: false

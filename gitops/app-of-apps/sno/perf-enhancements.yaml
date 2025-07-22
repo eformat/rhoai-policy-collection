@@ -30,7 +30,7 @@ spec:
         path: gitops/applications/perf-enhancements
         plugin:
           name: argocd-novault-plugin-kustomize
-        targetRevision: main
+        targetRevision: etx-ai
       syncPolicy:
         automated:
           prune: false

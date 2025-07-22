@@ -30,7 +30,7 @@ spec:
         path: gitops/applications/mcp-fast-tools/overlay
         plugin:
           name: argocd-novault-plugin-kustomize
-        targetRevision: main
+        targetRevision: etx-ai
       syncPolicy:
         automated:
           prune: false

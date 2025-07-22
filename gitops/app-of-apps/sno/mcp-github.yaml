@@ -30,7 +30,7 @@ spec:
         path: gitops/applications/mcp-github/overlay
         plugin:
           name: argocd-vault-plugin-kustomize
-        targetRevision: main
+        targetRevision: etx-ai
       syncPolicy:
         automated:
           prune: false
