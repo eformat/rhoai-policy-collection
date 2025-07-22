@@ -29,8 +29,7 @@ spec:
       managementState: Managed
     modelmeshserving:
       managementState: Managed
-    llamastackoperator:
-      managementState: Managed
+    llamastackoperator: # remove for now as no userConfig map
     modelregistry:
       managementState: Managed
     ray:
