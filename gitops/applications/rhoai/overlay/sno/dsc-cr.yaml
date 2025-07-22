@@ -29,6 +29,8 @@ spec:
       managementState: Managed
     modelmeshserving:
       managementState: Managed
+    llamastackoperator:
+      managementState: Managed
     modelregistry:
       managementState: Managed
     ray:
