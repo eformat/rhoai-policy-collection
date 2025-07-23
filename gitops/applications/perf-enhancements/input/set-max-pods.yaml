@@ -3,6 +3,8 @@ apiVersion: machineconfiguration.openshift.io/v1
 kind: KubeletConfig
 metadata:
   name: set-max-pods
+  annotations:
+    machineconfiguration.openshift.io/mc-name-suffix: '2'
 spec:
   machineConfigPoolSelector:
     matchLabels:
@@ -18,6 +20,8 @@ apiVersion: machineconfiguration.openshift.io/v1
 kind: KubeletConfig
 metadata:
   name: set-image-gc
+  annotations:
+    machineconfiguration.openshift.io/mc-name-suffix: '1'
 spec:
   machineConfigPoolSelector:
     matchLabels:
