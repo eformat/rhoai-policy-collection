@@ -2,7 +2,7 @@
 apiVersion: policy.open-cluster-management.io/v1beta1
 kind: PolicySet
 metadata:
-  name: hub-cluster
+  name: hub-cluster-2
 spec:
   description: "Policies for cluster configuration"
   policies:
@@ -12,7 +12,7 @@ spec:
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-hub-cluster
+  name: binding-hub-cluster-2
 placementRef:
   apiGroup: cluster.open-cluster-management.io
   kind: Placement
