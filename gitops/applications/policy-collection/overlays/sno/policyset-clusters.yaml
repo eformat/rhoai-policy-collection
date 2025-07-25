@@ -20,4 +20,4 @@ placementRef:
 subjects:
   - apiGroup: policy.open-cluster-management.io
     kind: PolicySet
-    name: hub-cluster
+    name: hub-cluster-2
