@@ -212,5 +212,23 @@ ansible-vault decrypt secrets/vault-sno --vault-password-file <(echo "$ANSIBLE_V
 sh secrets/vault-sno $ROOT_TOKEN
 ansible-vault encrypt secrets/vault-sno --vault-password-file <(echo "$ANSIBLE_VAULT_SECRET")
 
+create_vault_unseal_job() {
+    echo "💥 Create vault unseal job"
+    cat gitops/bootstrap/vault-unseal-cronjob.yaml | envsubst | oc apply -f-
+    until [ "${PIPESTATUS[2]}" == 0 ]
+    do
+        echo -e "${GREEN}Waiting for 0 rc from oc commands.${NC}"
+        ((i=i+1))
+        if [ $i -gt 50 ]; then
+            echo -e "🕱${RED}Failed - vault unseal job never done ?.${NC}"
+            exit 1
+        fi
+        sleep 10
+        cat gitops/bootstrap/vault-unseal-cronjob.yaml | envsubst | oc apply -f-
+    done
+    echo "💥 Create vault unseal job Done"
+}
+create_vault_unseal_job
+
 echo -e "\n🌻${GREEN}Vault setup OK.${NC}🌻\n"
 exit 0
