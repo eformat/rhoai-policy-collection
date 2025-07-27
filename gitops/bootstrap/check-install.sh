@@ -83,6 +83,10 @@ check_gpus_allocatable() {
         if [ "$STATUS" -gt 0 ]; then
             oc -n openshift-image-registry delete cronjob image-pruner
         fi
+        # buggy mc status - timing issue when KC does not generate properly
+        if [ $i -eq 100 ]; then
+            oc delete KubeletConfig set-max-pods
+        fi
         GPUS=$(oc get $(oc get node -o name -l node-role.kubernetes.io/master="") -o=jsonpath={.status.allocatable.nvidia\\.com\\/gpu})
     done
     echo "🌴 check_gpus_allocatable $GPUS ran OK"
