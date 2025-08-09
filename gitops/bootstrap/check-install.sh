@@ -88,6 +88,12 @@ check_gpus_allocatable() {
         if [ "$STATUS" -gt 0 ]; then
             oc -n openshift-image-registry delete cronjob image-pruner
         fi
+        # buggy 4.19 - get scc error for nfd - Error creating: pods "nfd-worker-" is forbidden:
+        NFD_STATUS=$(oc -n openshift-nfd describe ds nfd-worker | grep "Created pod: nfd-worker" | wc -l)
+        if [ "${NFD_STATUS}" -eq 0 ] && [ "$i" > 50 ]; then
+            oc delete pod --all -n openshift-nfd
+            sleep 15
+        fi
         GPUS=$(oc get $(oc get node -o name -l node-role.kubernetes.io/master="") -o=jsonpath={.status.allocatable.nvidia\\.com\\/gpu})
     done
     echo "🌴 check_gpus_allocatable $GPUS ran OK"
