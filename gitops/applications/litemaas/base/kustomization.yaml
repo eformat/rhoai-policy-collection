@@ -1,0 +1,16 @@
+---
+resources:
+  - postgres-secret.yaml
+  - backend-secret.yaml
+  - litellm-secret.yaml
+  - postgres-init-configmap.yaml
+  - postgres-statefulset.yaml
+  - postgres-service.yaml
+  - litellm-deployment.yaml
+  - litellm-service.yaml
+  - backend-deployment.yaml
+  - backend-service.yaml
+  - frontend-deployment.yaml
+  - frontend-service.yaml
+  - frontend-route.yaml
+  - litellm-route.yaml
