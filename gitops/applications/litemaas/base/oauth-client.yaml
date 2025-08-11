@@ -5,5 +5,5 @@ metadata:
    name: litemaas-oauth-client
 secret: <OAUTH_CLIENT_SECRET>
 redirectURIs:
-- <CORS_ORIGIN>/api/auth/callback
+- <OAUTH_REDIRECT_URL>
 grantMethod: auto
