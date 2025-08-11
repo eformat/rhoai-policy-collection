@@ -1,5 +1,6 @@
 ---
 resources:
+  - oauth-client.yaml
   - postgres-secret.yaml
   - backend-secret.yaml
   - litellm-secret.yaml
