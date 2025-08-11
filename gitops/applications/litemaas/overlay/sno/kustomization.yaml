@@ -1,0 +1,6 @@
+---
+namespace: litemaas
+
+resources:
+  - ../../base
+  - namespace.yaml
