@@ -1,0 +1,9 @@
+---
+kind: OAuthClient
+apiVersion: oauth.openshift.io/v1
+metadata:
+   name: litemaas-oauth-client
+secret: <OAUTH_CLIENT_SECRET>
+redirectURIs:
+- <CORS_ORIGIN>/api/auth/callback
+grantMethod: auto
