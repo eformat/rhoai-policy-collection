@@ -6,7 +6,7 @@ operators:
       name: openshift-operators
       create: false
     channels: [latest] # v0,1
-    version: ">1.16.0" # v1
+    version: "1.17.0" # v1
     catalog: openshift-redhat-operators #v1
     source: redhat-operators # v0
     sourceNamespace: openshift-marketplace # v0
@@ -23,8 +23,8 @@ operators:
     namespace:
       name: open-cluster-management
       create: true
-    channels: [release-2.13] # v0,1
-    version: "2.13.2" # v1
+    channels: [release-2.14] # v0,1
+    version: "2.14.0" # v1
     catalog: openshift-redhat-operators #v1
     source: redhat-operators # v0
     sourceNamespace: openshift-marketplace # v0
@@ -36,7 +36,7 @@ operators:
       name: cert-manager-operator
       create: true
     channels: [stable-v1] # v0,1
-    version: "1.15.1" # v1
+    version: "1.17.0" # v1
     catalog: openshift-redhat-operators #v1
     source: redhat-operators # v0
     sourceNamespace: openshift-marketplace # v0
