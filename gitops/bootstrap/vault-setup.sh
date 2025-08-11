@@ -9,11 +9,14 @@ readonly NC='\033[0m' # No Color
 # setup secrets for gitops
 # https://eformat.github.io/rainforest-docs/#/2-platform-work/3-secrets
 
+ENVIRONMENT=${ENVIRONMENT:-roadshow}
+
 [ -z "$AWS_PROFILE" ] && echo "🕱 Error: must supply AWS_PROFILE in env" && exit 1
 [ -z "$BASE_DOMAIN" ] && echo "🕱 Error: must supply BASE_DOMAIN in env" && exit 1
 [ -z "$ADMIN_PASSWORD" ] && echo "🕱 Error: must supply ADMIN_PASSWORD in env" && exit 1
 [ -z "$CLUSTER_NAME" ] && echo "🕱 Error: must supply CLUSTER_NAME in env" && exit 1
 [ -z "$ANSIBLE_VAULT_SECRET" ] && echo "🕱 Error: must supply ANSIBLE_VAULT_SECRET in env" && exit 1
+[ -z "$ENVIRONMENT" ] && echo "🕱 Error: must supply ENVIRONMENT in env or cli" && exit 1
 
 # use login
 export KUBECONFIG=~/.kube/config.${AWS_PROFILE}
@@ -208,9 +211,9 @@ vault write auth/$CLUSTER_DOMAIN-${PROJECT_NAME}/config \
 kubernetes_host="$(oc whoami --show-server)" \
 kubernetes_ca_cert="$CA_CRT"
 
-ansible-vault decrypt secrets/vault-sno --vault-password-file <(echo "$ANSIBLE_VAULT_SECRET")
-sh secrets/vault-sno $ROOT_TOKEN
-ansible-vault encrypt secrets/vault-sno --vault-password-file <(echo "$ANSIBLE_VAULT_SECRET")
+ansible-vault decrypt secrets/vault-${ENVIRONMENT} --vault-password-file <(echo "$ANSIBLE_VAULT_SECRET")
+sh secrets/vault-${ENVIRONMENT} $ROOT_TOKEN
+ansible-vault encrypt secrets/vault-${ENVIRONMENT} --vault-password-file <(echo "$ANSIBLE_VAULT_SECRET")
 
 create_vault_unseal_job() {
     echo "💥 Create vault unseal job"
