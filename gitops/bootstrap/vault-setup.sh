@@ -66,7 +66,7 @@ wait_for_project() {
         echo -e "${GREEN}Waiting for project $project.${NC}"
         sleep 5
         ((i=i+1))
-        if [ $i -gt 200 ]; then
+        if [ $i -gt 300 ]; then
             echo -e "🚨${RED}Failed waiting for project $project never Succeeded?.${NC}"
             exit 1
         fi
@@ -84,7 +84,7 @@ wait_for_vault_pod () {
     do
         echo -e "${GREEN}Waiting for 0 rc from oc commands.${NC}"
         ((i=i+1))
-        if [ $i -gt 100 ]; then
+        if [ $i -gt 300 ]; then
             echo -e "🕱${RED}Failed - oc never ready?.${NC}"
             exit 1
         fi
@@ -151,7 +151,7 @@ unseal() {
     do
         echo -e "${GREEN}Waiting for 0 rc from oc commands.${NC}"
         ((i=i+1))
-        if [ $i -gt 20 ]; then
+        if [ $i -gt 30 ]; then
             echo -e "🕱${RED}Failed - to unseal vault ?${NC}"
             exit 1
         fi
