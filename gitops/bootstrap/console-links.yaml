@@ -18,7 +18,7 @@ metadata:
 spec:
   applicationMenu:
     section: SRE
-    imageURL: https://min.io/resources/img/logo/MINIO_Bird.png
+    imageURL: https://cdn.prod.website-files.com/681c8426519d8db8f867c1e8/68656cb290ee4fa91989c2dc_Brand-Logo%20%E2%9C%85.svg
   href: https://minio-minio.apps.$CLUSTER_NAME.$BASE_DOMAIN
   location: ApplicationMenu
   text: minio
