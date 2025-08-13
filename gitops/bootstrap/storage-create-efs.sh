@@ -65,6 +65,8 @@ if [ -z "$fsid" ]; then
 fi
 EFSID=${fsid}
 
+sleep 10
+
 cidr_block=$(aws ec2 describe-vpcs --region=${AWS_DEFAULT_REGION} --vpc-ids ${vpcid} --query "Vpcs[].CidrBlock" --output text)
 if [ -z "$cidr_block" ]; then
     echo -e "🚨${RED}Failed - failed to find CIDR for vpcid: ${vpcid} region: ${AWS_DEFAULT_REGION} ? ${NC}"
