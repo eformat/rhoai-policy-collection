@@ -12,9 +12,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ .Values.webTerminal.repoURL }}
-    targetRevision: {{ .Values.webTerminal.targetRevision }}
-    path: {{ .Values.webTerminal.path }}
+    repoURL: https://github.com/eformat/rhoai-policy-collection.git
+    targetRevision: etx-ai
+    path: gitops/applications/web-terminal
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
@@ -33,9 +33,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/rhpds/etx-llmaas-gitops
-    targetRevision: main
-    path: web-terminal/chart
+    repoURL: https://github.com/eformat/rhoai-policy-collection.git
+    targetRevision: etx-ai
+    path: gitops/applications/web-terminal/chart
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
