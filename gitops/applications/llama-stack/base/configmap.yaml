@@ -107,16 +107,16 @@ data:
           otel_trace_endpoint: ${env.OTEL_EXPORTER_OTLP_ENDPOINT:=}
           otel_exporter_otlp_endpoint: ${env.OTEL_EXPORTER_OTLP_ENDPOINT:=}
           sqlite_db_path: ${env.SQLITE_DB_PATH:=~/.llama/trace_store.db}
-      vector_io:
-      - provider_id: milvus
-        provider_type: remote::milvus
-        config:
-          uri: http://milvus-service.milvus.svc.cluster.local:19530
-          token: null
-          kvstore:
-            type: sqlite
-            namespace: null
-            db_path: ${env.SQLITE_STORE_DIR:=~/.llama}/milvus_registry.db
+      # vector_io:
+      # - provider_id: milvus
+      #   provider_type: remote::milvus
+      #   config:
+      #     uri: http://milvus-service.milvus.svc.cluster.local:19530
+      #     token: null
+      #     kvstore:
+      #       type: sqlite
+      #       namespace: null
+      #       db_path: ${env.SQLITE_STORE_DIR:=~/.llama}/milvus_registry.db
       tool_runtime:
       - provider_id: rag-runtime
         provider_type: inline::rag-runtime
