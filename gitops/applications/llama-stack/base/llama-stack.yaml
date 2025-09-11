@@ -4,7 +4,7 @@ kind: LlamaStackDistribution
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"llamastack.io/v1alpha1","kind":"LlamaStackDistribution","metadata":{"annotations":{},"name":"llamastack-with-config","namespace":"default"},"spec":{"replicas":1,"server":{"containerSpec":{"port":8321},"distribution":{"name":"remote-vllm"},"userConfig":{"configMapName":"llama-stack-config"}}}}
+      {"apiVersion":"llamastack.io/v1alpha1","kind":"LlamaStackDistribution","metadata":{"annotations":{},"name":"llamastack-with-config","namespace":"default"},"spec":{"replicas":1,"server":{"containerSpec":{"port":8321},"distribution":{"name":"rh-dev"},"userConfig":{"configMapName":"llama-stack-config"}}}}
   name: llamastack-with-config
 spec:
   replicas: 1
@@ -55,7 +55,7 @@ spec:
       - name: LLAMA_STACK_LOGGING
         value: all=debug
     distribution:
-      name: rh-dev # remote-vllm (upstream)
-      # image: quay.io/eformat/distribution-remote-vllm:0.2.15
+      name: rh-dev # rh-dev (upstream)
+      # image: quay.io/eformat/distribution-rh-dev:0.2.15
     userConfig:
       configMapName: llama-stack-config

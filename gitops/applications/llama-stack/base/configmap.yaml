@@ -6,7 +6,7 @@ data:
   run.yaml: |
     # Llama Stack Configuration
     version: '2'
-    image_name: remote-vllm
+    image_name: rh-dev
     apis:
     - agents
     - datasetio
@@ -74,10 +74,10 @@ data:
           persistence_store:
             type: sqlite
             namespace: null
-            db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/remote-vllm}/agents_store.db
+            db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/rh-dev}/agents_store.db
           responses_store:
             type: sqlite
-            db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/remote-vllm}/responses_store.db
+            db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/rh-dev}/responses_store.db
       eval:
       - provider_id: meta-reference
         provider_type: inline::meta-reference
@@ -85,7 +85,7 @@ data:
           kvstore:
             type: sqlite
             namespace: null
-            db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/remote-vllm}/meta_reference_eval.db
+            db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/rh-dev}/meta_reference_eval.db
       scoring:
       - provider_id: basic
         provider_type: inline::basic
@@ -106,7 +106,7 @@ data:
           otel_metric_endpoint: ${env.OTEL_EXPORTER_OTLP_ENDPOINT:=}
           otel_trace_endpoint: ${env.OTEL_EXPORTER_OTLP_ENDPOINT:=}
           otel_exporter_otlp_endpoint: ${env.OTEL_EXPORTER_OTLP_ENDPOINT:=}
-          sqlite_db_path: ${env.SQLITE_DB_PATH:=~/.llama/distributions/remote-vllm/trace_store.db}
+          sqlite_db_path: ${env.SQLITE_DB_PATH:=~/.llama/distributions/rh-dev/trace_store.db}
       vector_io:
       - provider_id: milvus
         provider_type: remote::milvus
@@ -134,10 +134,10 @@ data:
         provider_type: remote::tavily-search
     metadata_store:
       type: sqlite
-      db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/remote-vllm}/registry.db
+      db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/rh-dev}/registry.db
     inference_store:
       type: sqlite
-      db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/remote-vllm}/inference_store.db
+      db_path: ${env.SQLITE_STORE_DIR:~/.llama/distributions/rh-dev}/inference_store.db
     shields: []
     vector_dbs: []
     datasets: []
