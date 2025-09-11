@@ -17,7 +17,6 @@ data:
     - telemetry
     - tool_runtime
     - vector_io
-    - files_api
     models:
     - metadata: {}
       model_id: ${env.LLAMA3B_MODEL:=}
@@ -116,6 +115,7 @@ data:
           token: null
           kvstore:
             type: sqlite
+            namespace: null
             db_path: ${env.SQLITE_STORE_DIR:=~/.llama}/milvus_registry.db
       tool_runtime:
       - provider_id: rag-runtime
