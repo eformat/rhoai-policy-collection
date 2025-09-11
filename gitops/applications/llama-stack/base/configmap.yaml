@@ -103,6 +103,7 @@ data:
         config:
           service_name: ${env.OTEL_SERVICE_NAME:=llama-stack}
           sinks: ${env.TELEMETRY_SINKS:=console, sqlite, otel_metric, otel_trace}
+          otel_metric_endpoint: ${env.OTEL_EXPORTER_OTLP_ENDPOINT:=}
           otel_trace_endpoint: ${env.OTEL_EXPORTER_OTLP_ENDPOINT:=}
           otel_exporter_otlp_endpoint: ${env.OTEL_EXPORTER_OTLP_ENDPOINT:=}
           sqlite_db_path: ${env.SQLITE_DB_PATH:=~/.llama/distributions/remote-vllm/trace_store.db}
