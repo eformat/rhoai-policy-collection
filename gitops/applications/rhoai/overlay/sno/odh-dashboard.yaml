@@ -28,7 +28,7 @@ spec:
     disableKServeAuth: false
     disableKServeMetrics: false
     disableFineTuning: false
-    disableLMEval: false
+#    disableLMEval: false
     disableModelCatalog: false
     disableModelMesh: false
     disableModelRegistry: false
