@@ -17,6 +17,7 @@ data:
     - telemetry
     - tool_runtime
     - vector_io
+    - files_api
     models:
     - metadata: {}
       model_id: ${env.LLAMA3B_MODEL:=}
