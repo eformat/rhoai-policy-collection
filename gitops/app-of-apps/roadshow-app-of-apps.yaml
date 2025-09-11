@@ -16,7 +16,7 @@ spec:
     directory:
       include: "*.yaml"
     repoURL: https://github.com/eformat/rhoai-policy-collection.git
-    targetRevision: main
+    targetRevision: llama-stack-dsc
   syncPolicy:
     automated:
       selfHeal: true

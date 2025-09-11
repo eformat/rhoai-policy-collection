@@ -30,7 +30,7 @@ spec:
         path: gitops/applications/llama-stack-playground/overlay
         plugin:
           name: argocd-vault-plugin-kustomize
-        targetRevision: main
+        targetRevision: llama-stack-dsc
       syncPolicy:
         automated:
           prune: false

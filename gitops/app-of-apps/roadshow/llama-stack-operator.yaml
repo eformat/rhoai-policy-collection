@@ -30,7 +30,7 @@ spec:
         path: gitops/applications/llama-stack-operator/overlay
         plugin:
           name: argocd-novault-plugin-kustomize
-        targetRevision: main
+        targetRevision: llama-stack-dsc
       syncPolicy:
         automated:
           prune: false
