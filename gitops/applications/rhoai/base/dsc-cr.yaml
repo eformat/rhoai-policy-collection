@@ -27,6 +27,8 @@ spec:
         name: knative-serving
     kueue:
       managementState: Managed
+    llamastackoperator:
+      managementState: Managed
     modelmeshserving:
       managementState: Managed
     modelregistry:
